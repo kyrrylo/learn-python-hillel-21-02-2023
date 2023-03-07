@@ -1,3 +1,14 @@
+# отрезаем расширение файла
+
+filename = 'string_examples_with_indices.py'
+
+i = filename.rfind('.')
+
+print(filename[:i])
+print(filename[i:])
+
+# join & split
+
 text = """
 The diesel engine, named after Rudolf Diesel, is an internal combustion
  engine in which ignition of the fuel is caused by the elevated temperature 
@@ -9,28 +20,18 @@ The diesel engine, named after Rudolf Diesel, is an internal combustion
 
 text_words = text.split()
 
+# сколько раз в тексте применяется слово ignition?
+len_text_words = len(text_words)
+for i in range(len_text_words):
+    print(i, end=' ')
+    print(text_words[i])
 
 i = 0
-while i < 10:
-    print('Я поднимаюсь по лестнице')
-    print(f'Я на {i} этаже')
+while text_words >= len_text_words:
+    print()
 
-    # две идентичные команды
-    # i = i + 1
-    i += 1
-print('Я поднялся!')
+print()
 
+for word in text_words:
+    print(word, end=' ')
 
-
-
-
-
-
-
-"""
-while True:
-    if time_to_exit:
-        exit()
-        # или
-        break
-"""
