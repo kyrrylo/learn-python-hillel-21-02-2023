@@ -24,6 +24,9 @@ for i in range(len_text_words):
     print(i, end=' ')
     print(text_words[i])
 
+for word in text_words:
+    print(word, end=' ')
+
 # for <объявляем переменную> in <источник данных>:
 # в объявленную переменную будет записан каждый элемент данных из источника
 for i in 'Я поднимаюсь по лестнице':
