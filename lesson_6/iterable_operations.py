@@ -91,6 +91,19 @@ sorted_x = sorted(x)
 print(f'Reverse sort {x}: {list(reversed(sorted_x))}')
 print(f'Reverse sort {x}: {sorted(x, reverse=True)}')
 print(f'Reverse of {x}: {list(reversed(x))}')
+print(f'Reverse of with slices {x}: {x[::-1]}')  # reverse with slice
+print(f'Each second element with slices {x}: {x[::2]}')
+print(f'Full example of slices with step (reverse) {x}: {x[4:2:-1]}')
+print(f'Full example of slices with each second {x}: {x[2:100:2]}')
+print(f'Example of slices with each second {x}: {x[1::2]}')
+print(f'Example of slices with each second {x}: {x[::2]}')
+
+# range(откуда, докуда, шаг)
+print(range(5, 60, 4))
+print(list(range(5, 60, 4)))
+for x in range(5, 60, 4):
+    print(x, end=' ')
+print()
 
 print('=' * 10, 'Strings', '=' * 10)
 # sum(text_words) суммируем мы всё же числа, если нужно склеить строки - есть join
