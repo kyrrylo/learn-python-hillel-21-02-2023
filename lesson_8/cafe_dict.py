@@ -1,9 +1,9 @@
-from input_number import get_user_int
+from lesson_7.input_number import get_user_int
 
 MENU = [
     ('Чай', 10),
     ('Эспрессо', 12),
-    ('Американо', 12),
+    ('Раф', 15),
     ('Малиновый пончик', 15),
     ('Шоколадный пончик', 15),
     ('Круассан', 15)
@@ -28,38 +28,26 @@ if __name__ == '__main__':
     for menu_entry in MENU:
         menu_set.add(menu_entry[0].lower())
     # print(menu_set)
+    menu_dict = dict()
+    for menu_entry in MENU:
+        menu_dict[menu_entry[0].lower()] = menu_entry[1]
+    print(menu_dict)
 
     user_pouch = get_user_int('Сколько у вас денег (UAH)? ', 0)
 
     while True:
-        # даём возможность выйти
         to_exit = input(f'Нажмите enter чтобы сделать заказ или введите exit чтобы уйти... ').lower()
-        # выходим
         if to_exit == 'exit':
-            break
-        # отображаем меню
+            exit(0)
         display_menu()
-        # берем данные о заказе
         order = input(f'У вас есть {user_pouch:.2f} UAH. Что будете заказывать? ').lower()
-        # заказ есть в меню
-        if order in menu_set:
-            # ищем информацию о заказе в меню
-            for menu_entry in MENU:
-                # нашли
-                if menu_entry[0].lower() == order:
-                    # сравниваем цену из информации о заказе с средствами клиента
-                    if user_pouch >= menu_entry[1]:
-                        # средств хватает, вычитываем нужную сумму
-                        user_pouch -= menu_entry[1]
-                        # выдаём заказ
-                        print(f'{menu_entry[0]} подано, с вас {menu_entry[1]:.2f} UAH')
-                    # средств не хватает
-                    else:
-                        print(f'{menu_entry[0]} стоит {menu_entry[1]:.2f} UAH. У вас не хватает!')
-                    # нужный заказ найден, можно дальше не искать
-                    break
+        if order in menu_dict:
+            if user_pouch >= menu_dict[order]:
+                user_pouch -= menu_dict[order]
+                print(f'{order.capitalize()} подано, с вас {menu_dict[order]:.2f} UAH')
+            else:
+                print(f'{order.capitalize()} стоит {menu_dict[order]:.2f} UAH. У вас не хватает!')
         else:
-            # такие заказы здесь не принимают!
             print(f'У нас нет {order}!')
 
 

@@ -1,5 +1,13 @@
 # имя + параметры/аргументы = сигнатура функции
-def get_user_float(comment: str):
+def get_user_float(comment: str) -> float:
+    """
+        # Первая строчка (может быть больше одной строчки) - описание обязанностей функции, что мы от неё ожидаем
+    Отвечает за считывание ввода пользователя и преобразования его в десятичное число (float)
+
+        # Остальные строки - это описание входных параметров и что на выходе
+    :param comment: обращение к пользователю, комментарий к смыслу вводимого числа
+    :return: введенное пользователем число
+    """
     # внутри функции - локальная область видимости
     while True:
         try:
@@ -9,14 +17,23 @@ def get_user_float(comment: str):
             print('Число!!!')
 
 
-def get_user_int(comment: str):
+def get_user_int(comment: str, lower_bound: int = -10000000) -> int:
+    """
+    Отвечает за считывание, обработку и преобразование ответа пользователя в целое число int
+    :param comment: обращение к пользователю
+    :param lower_bound: нижнее допустимое значение, по умолчанию -10000000
+    :return: считанное у пользователя число
+    """
     # внутри функции - локальная область видимости
     while True:
         try:
-            z = input(comment)
-            return int(z)
+            z = int(input(comment))
+            if z > lower_bound:
+                return int(z)
+            else:
+                print(f'Мы ожидаем число не меньше {lower_bound}')
         except Exception:
-            print('Число!!!')
+            print(f'Мы ожидаем число!')
 
 
 MY_VAR = 'Python variable'
