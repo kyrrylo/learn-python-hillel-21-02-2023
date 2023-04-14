@@ -1,12 +1,12 @@
-from animal import Animal
+from .animal import Animal
 
 
-class Cow(Animal):
+class Hen(Animal):
     def __init__(self, name: str, preferred_food: set, age: int):
         super().__init__(name, preferred_food, age)
-        self.say_word = "Му-у-у!"
-        self.animal_type = "Корова"
+        self.say_word = "Кудах-кудах"
+        self.animal_type = "Курица"
 
     def treat(self, hours: int = 1) -> str:
         print(f"Вы ухаживаете за {self.name} {hours} часов.")
-        return "Молоко"
+        return "Куриные яйца"

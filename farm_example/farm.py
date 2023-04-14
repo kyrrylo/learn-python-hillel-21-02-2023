@@ -1,7 +1,4 @@
-from animal import Animal
-from dog import Dog
-from hen import Hen
-from cow import Cow
+from animals import Animal, Dog, Hen, Cow
 from random import choices
 
 
@@ -11,6 +8,14 @@ if __name__ == '__main__':
     a.say()
     a.eat('печенька')
     a.treat()
+    a.name = 'Не Чупакабра'
+    a.age = 5
+    print(a.hungry)
+    a.eat('???')
+    print(a.hungry)
+    a.hungry = 10
+    print(a)
+    a.say()
 
     farm_animals = [
         Dog('Напас', {'мясо', 'сало', 'борщ'}, 14),
@@ -46,4 +51,3 @@ if __name__ == '__main__':
     print()
     print(f'Ухаживая за животными, мы потеряли: {what_we_lost}')
     print(f'Ухаживая за животными, мы получили: {what_we_get}')
-
