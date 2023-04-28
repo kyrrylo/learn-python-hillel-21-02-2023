@@ -1,0 +1,5 @@
+Web Back End & Web Scraping => Python Pro
+Artificial Intelligence => Machine Learning
+Data Science/Data Analyze => Business Analytics
+Devops
+QA Automation
